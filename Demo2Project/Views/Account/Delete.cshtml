@@ -1,0 +1,33 @@
+﻿@model Demo2Project.Models.AccountViewModel
+
+@{
+  ViewBag.Title = Model.UserName;
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = @"btn btn-default" })
+</p>
+@using (Html.BeginForm("Delete", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      @Html.LabelFor(p_Model => p_Model.UserName, new
+      {
+        @class = "control-label col-sm-2"
+      })
+      <div class="col-sm-4">
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @disabled = "" })
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-4">
+        <p>Are you sure you want to delete this account?</p>
+        <input type="submit" value="Delete" class="btn btn-default" data-loading-text="Deleting..." />
+      </div>
+    </div>
+  </div>
+}

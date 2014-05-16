@@ -1,0 +1,50 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@ViewBag.Title</title>
+  @Styles.Render("~/Content/css")
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        @Html.ActionLink("Demo Project", "Index", "Home", null, new { @class = "navbar-brand" })
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>@Html.ActionLink("Home", "Index", "Home")</li>
+          <li>@Html.ActionLink("Accounts", "Index", "Account")</li>
+        </ul>
+        @Html.Partial("_LoginPartial")
+      </div>
+    </div>
+  </div>
+  <div class="message"></div>
+  <div class="container body-content" style="opacity: 0;">
+    @RenderBody()
+    @*<hr />
+      <footer>
+          <p>&copy; @(DateTime.Now.Year) - Demo Project</p>
+      </footer>*@
+  </div>
+  @Scripts.Render("~/Content/jquery")
+  @Scripts.Render("~/Content/bootstrap")
+  @Scripts.Render("~/Content/script")
+  <script type="text/javascript">
+    // Get messages
+    $(document).ready(function ()
+    {
+      window.Demo2Project.Api.ShowMessage('@Url.Action(@"GetMessage", @"Api")');
+    });
+  </script>
+  @RenderSection("scripts", required: false)
+</body>
+</html>

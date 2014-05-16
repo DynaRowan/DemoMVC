@@ -1,0 +1,25 @@
+﻿@model Demo2Project.Models.AccountViewModel
+
+@{
+  ViewBag.Title = "My account";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      @Html.LabelFor(p_Model => p_Model.UserName, new
+      {
+        @class = "control-label col-sm-2"
+      })
+      <div class="col-sm-4">
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @disabled = ""})
+      </div>
+    </div>
+  </div>
+}

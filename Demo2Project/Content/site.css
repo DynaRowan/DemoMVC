@@ -1,0 +1,139 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  overflow-x: hidden;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    /*padding-left: 15px;
+    padding-right: 15px;*/
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;*/
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    /*color: #b94a48;*/
+}
+
+.field-validation-valid {
+    /*display: none;*/
+}
+
+input.input-validation-error {
+    /*border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    /*border: 0 none;*/
+}
+
+.validation-summary-errors {
+    /*color: #b94a48;*/
+}
+
+/* Hide ASP.Net default summary TODO: Remove when message is centralized */
+.validation-summary-valid {
+   display: none;
+}
+
+/* Remove outline */
+a, a:active, a:focus, input[type='checkbox']:active, input[type='checkbox']:focus {
+outline: none;
+}
+
+/* Hide panel border on mobile */
+@media (max-width: 767px) {
+  .panel.panel-default
+  {
+    border: none;
+    box-shadow: none;
+  }
+  .col-add-margin
+  {
+    margin-bottom: 15px;
+  }
+}
+
+/* Align submit button on centered layout */
+@media (min-width: 768px) {
+  .centered input[type='submit']
+  {
+    float: right;
+  }
+}
+
+/* Override bootstrap */
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: left;
+  }
+}
+
+/* Fixed Message */
+.message
+{
+  position: fixed;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 0;
+  *zoom: 1;
+  z-index: 9000;
+  font-size: 90%;
+}
+.message.message_validation
+{
+  background-color: #a94442;
+  background-color: rgba(169, 68, 66, 0.8);
+  color: #ffffff;
+}
+
+.message.message_error
+{
+  background-color: #ff4949;
+  background-color: rgba(255, 73, 73, 0.8);
+  color: #ffffff;
+}
+
+.message.message_info
+{
+  background-color: #3b85c2;
+  background-color: rgba(59, 133, 194, 0.8);
+  color: #ffffff;
+}
+
+.message.message_success
+{
+  background-color: #40a52e;
+  background-color: rgba(64, 165, 46, 0.8);
+  color: #ffffff;
+}
+
+.message.message_warning
+{
+  background-color: #ffe01c;
+  background-color: rgba(255, 224, 28, 0.8);
+}
+.message .message_list
+{
+}
+.message .message_item
+{
+  position: relative;
+  padding-right: 26px;
+  padding-left: 26px;
+}
+.message .message_close
+{
+  position: absolute;
+  right: 0;
+  line-height: 18px;
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+﻿@model Demo2Project.Models.AccountViewModel
+
+@{
+    ViewBag.Title = "New account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+  @Html.ActionLink("Back to List", "Index", null, new { @class = @"btn btn-default"})
+</p>
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <div class="form-group">
+      @Html.LabelFor(p_Model => p_Model.UserName, new
+      {
+        @class = "control-label col-sm-2"
+      })
+      <div class="col-sm-4">
+        @Html.TextBoxFor(model => model.UserName, new { @class = "form-control" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Create Account" class="btn btn-default" data-loading-text="Inserting..." />
+      </div>
+    </div>
+  </div>
+}

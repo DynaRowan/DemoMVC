@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Demo2Project.Models.AccountViewModel>
+
+@{
+  ViewBag.Title = "Accounts";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+
+<p>
+  @Html.ActionLink("Create New", "Create", null, new { @class = @"btn btn-default"})
+</p>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th style="width: 100%;">
+        @Html.DisplayNameFor(model => model.UserName)
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var l_Item in Model)
+    {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => l_Item.UserName)
+        </td>
+        <td style="white-space: nowrap">
+          @Html.ActionLink("View", "Details", new { id = l_Item.UserName })
+          @Html.ActionLink("Delete", "Delete", new { id = l_Item.UserName })
+        </td>
+      </tr>
+    }
+    @if (!Model.Any())
+    {
+      <tr>
+        <td colspan="2">
+          No Accounts
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
