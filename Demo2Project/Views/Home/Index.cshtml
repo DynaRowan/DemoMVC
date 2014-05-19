@@ -9,6 +9,24 @@
       This website is based on the latest Microsoft design pattern in Visual Studio 2013 for MVC based web applications.
     </p>
     <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865" target="_blank">Learn more &raquo;</a></p>
+
+    <div class="form-horizontal">
+      <div class="form-group">
+        <label for="typeahead" class="control-label col-sm-2">Typeahead</label>
+        <div class="col-sm-6">
+          @Html.TextBox(@"typeahead", null, new { @class = @"form-control" })
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="datepicker" class="control-label col-sm-2">Datepicker</label>
+        <div class="col-sm-6">
+          @Html.Hidden(@"datepicker-hidden")
+          @Html.TextBox(@"datepicker", null, new { @class = @"form-control" })
+        </div>
+      </div>
+    </div>
+
+
   </div>
   <div class="col-sm-4">
     <h2>Used libraries</h2>

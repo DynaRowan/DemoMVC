@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,6 +89,7 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
@@ -98,8 +100,6 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -129,13 +129,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -144,16 +144,11 @@
   <ItemGroup>
     <Content Include="App_Data\dummy.txt" />
     <Content Include="Content\bootstrap\bootstrap.css" />
-    <Content Include="Content\font-awesome.css" />
-    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\bootstrap\datepicker\datepicker.css" />
+    <Content Include="Content\bootstrap\typeahead\typeahead.css" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\site.css" />
-    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
@@ -197,12 +192,74 @@
     <Content Include="Content\bootstrap\bootstrap.less" />
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
+    <Content Include="Content\bootstrap\datepicker\datepicker.less" />
+    <Content Include="Scripts\bootstrap-datepicker-1.3.0.js" />
+    <Content Include="Scripts\bootstrap-typeahead-0.10.2.js" />
+    <Content Include="Scripts\bootstrap-typeahead-0.10.2.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\typeahead\typeahead.less" />
+    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.1.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ar.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.az.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.bg.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ca.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.cs.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.cy.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.da.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.de.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.el.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.es.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.et.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.fa.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.fi.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.fr.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.gl.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.he.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.hr.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.hu.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.id.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.is.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.it.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ja.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ka.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.kk.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.kr.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.lt.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.lv.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.mk.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ms.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.nb.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.nl.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.no.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.pl.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.pt.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ro.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.rs.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ru.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.sk.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.sl.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.sq.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.sv.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.sw.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.th.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.tr.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.ua.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.vi.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Scripts\locale\bootstrap-datepicker.zh-TW.js" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Details.cshtml" />
     <Content Include="Views\Account\Index.cshtml" />
     <None Include="Properties\PublishProfiles\localhost.pubxml" />
     <Content Include="Views\Account\Delete.cshtml" />
     <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
@@ -219,14 +276,8 @@
     <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
-    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.1.0.js" />
-    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\script-1.0.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
     <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
@@ -291,7 +342,7 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>"C:\Users\Sanne\Downloads\less.js-windows-v1.7.0\lessc.cmd"  "$(ProjectDir)\Content\bootstrap\bootstrap.less"  "$(ProjectDir)\Content\bootstrap\bootstrap.css"</PostBuildEvent>
+    <PostBuildEvent>"I:\Software\LESS\less.js-windows-v1.7.0\lessc.cmd"  "$(ProjectDir)Content\bootstrap\bootstrap.less"  "$(ProjectDir)Content\bootstrap\bootstrap.css"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

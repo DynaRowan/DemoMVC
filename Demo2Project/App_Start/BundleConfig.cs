@@ -12,7 +12,7 @@ namespace Demo2Project
 
       // Bootstrap
       bundles.Add(new ScriptBundle("~/Content/bootstrap").Include(
-                "~/Scripts/bootstrap.js"));
+                "~/Scripts/bootstrap.js", "~/Scripts/bootstrap-datepicker-{version}.js", "~/Scripts/bootstrap-typeahead-{version}.js"));
 
       // Script
       bundles.Add(new ScriptBundle("~/Content/script").Include(
@@ -20,7 +20,7 @@ namespace Demo2Project
 
       // Stylesheet
       bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap/bootstrap.css", "~/Content/font-awesome.css", "~/Content/site.css"));
+                "~/Content/bootstrap/bootstrap.css", "~/Content/site.css"));
     }
   }
 }
