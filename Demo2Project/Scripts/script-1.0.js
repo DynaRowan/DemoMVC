@@ -84,10 +84,18 @@ $(document).ready(function ()
 
 $(function()
 {
-  $('#datepicker').datepicker().on('changeDate', function (e)
+  $('#datepicker').datepicker({ 
+  }).on('changeDate', function (e)
   {
     $('#datepicker').parent().find('#datepicker-hidden').val(e.format('yyyy/mm/dd'));
   });
+  $('.input-daterange').datepicker({
+    forceParse: false,
+    startDate: "05/10/2014",
+    todayBtn: "linked",
+    calendarWeeks: true,
+    todayHighlight: true,
+  })
 });
 
 var substringMatcher = function(strs) {
