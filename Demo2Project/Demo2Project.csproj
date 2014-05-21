@@ -294,6 +294,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Message.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ViewModels.cs" />
     <Compile Include="Models\ApplicationModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -315,7 +316,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

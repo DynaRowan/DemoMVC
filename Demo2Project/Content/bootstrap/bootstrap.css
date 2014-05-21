@@ -5781,8 +5781,6 @@ button.close {
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
-/*@import "variables.less";
-@import "mixins.less";*/
 .datepicker {
   padding: 4px;
   border-radius: 4px;
